@@ -16,6 +16,7 @@ jobs:
       - name: install dependencies
         working-directory: ./lab1
         run: |
+          pwd
           pip install -r requirements.txt
           
           
