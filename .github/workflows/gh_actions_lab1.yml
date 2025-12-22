@@ -14,7 +14,7 @@ jobs:
           python-version: '3.13'
 
       - name: install dependencies
-        working-directory: ./lab1
+        working-directory: GH_Actions/lab1
         run: |
           pwd
           pip install -r requirements.txt
