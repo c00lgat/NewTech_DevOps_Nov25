@@ -16,8 +16,12 @@ jobs:
       - name: install dependencies
         working-directory: GH_Actions/lab1
         run: |
-          pwd
           pip install -r requirements.txt
+
+      - name: test app
+        working-directory: GH_Actions/lab1
+        run: |
+          python -m unittest test_calculator.py -v
           
           
 
