@@ -1,7 +1,7 @@
 defaults:
   run:
     shell: bash
-    working-directory: ../../GH_Actions/lab1
+    working-directory: ./lab1
 
 name: python_calculator_test_workflow
 on: 
