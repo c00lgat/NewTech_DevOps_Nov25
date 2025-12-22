@@ -1,7 +1,3 @@
-defaults:
-  run:
-    shell: bash
-
 name: python_calculator_test_workflow
 on: 
   workflow_dispatch
@@ -18,7 +14,8 @@ jobs:
           python-version: '3.13'
 
       - name: install dependencies
-        run: 
+        working-directory: ./lab1
+        run: |
           pip install -r requirements.txt
           
           
