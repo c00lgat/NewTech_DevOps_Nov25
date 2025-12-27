@@ -21,7 +21,7 @@ jobs:
             - name: Run tests
               working-directory: GH_Actions/lab2
               run: |
-              python -m unittest test_string_utils.py -v
+                python -m unittest test_string_utils.py -v
 
     second_job:
         needs: [first_job]
@@ -29,4 +29,4 @@ jobs:
         steps:
             - name: CICD
               run: |
-              echo "deploying application"
+                echo "deploying application"
