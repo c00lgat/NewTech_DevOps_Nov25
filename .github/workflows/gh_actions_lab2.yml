@@ -1,0 +1,32 @@
+name: gh_actions_lab2
+on:
+    push
+
+jobs:
+    first_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v6
+
+            - uses: actions/setup-python@v6
+              with:
+                python-version: '3.11'
+            
+            - name: Install dependencies
+              working-directory: GH_Actions/lab2
+              run: |
+                pip install -r requirements.txt
+            
+            - name: Run tests
+              working-directory: GH_Actions/lab2
+              run: |
+              python -m unittest test_string_utils.py -v
+
+    second_job:
+        needs: [first_job]
+        runs-on: ubuntu-latest
+        steps:
+            - name: CICD
+              run: |
+              echo "deploying application"
