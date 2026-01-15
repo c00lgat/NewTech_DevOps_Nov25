@@ -8,13 +8,13 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Copy requirements file first (for better Docker layer caching)
-COPY requirements.txt .
+COPY app/requirements.txt .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application files
-COPY app.py .
+COPY app/app.py .
 
 # Expose port 5000 (this documents which port the app uses)
 EXPOSE 5000
